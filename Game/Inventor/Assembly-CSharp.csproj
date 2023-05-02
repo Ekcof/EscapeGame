@@ -56,10 +56,10 @@
     <Analyzer Include="D:\Create\Microsoft\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Pick.cs" />
-    <Compile Include="Assets\Script\SC_FPSController.cs" />
-    <Compile Include="Assets\Script\Inventor\PauseInv.cs" />
     <Compile Include="Assets\Script\Inventor\Inventory.cs" />
+    <Compile Include="Assets\Script\Inventor\PauseInv.cs" />
+    <Compile Include="Assets\Script\SC_FPSController.cs" />
+    <Compile Include="Assets\Script\Pick.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AddOns\Mg3D_Food\Food_ReadMe.txt" />
