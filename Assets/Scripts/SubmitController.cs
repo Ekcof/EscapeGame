@@ -34,6 +34,7 @@ public class SubmitController : MonoBehaviour
                 vectorThrow = new Vector3(Camera.main.transform.forward.x, Camera.main.transform.forward.y + 0.5f, Camera.main.transform.forward.z) * strength;
                 Vector3 forceV = vectorThrow * 50;
 
+                //Draw Trajectory of throwing
                 DrawTrajectory.Instance.UpdateTrajectory(forceV, rb, holdPosition.transform.position);
             }
         }
@@ -44,6 +45,7 @@ public class SubmitController : MonoBehaviour
             rb = null;
             if (hit.transform != null) rb = hit.transform.GetComponent<Rigidbody>();
 
+            // Get if Button is clicked
             if (Input.GetButton("Submit") || Input.GetKeyDown(KeyCode.E))
             {
                 if (rb != null && hit.transform.tag == "Ball")
