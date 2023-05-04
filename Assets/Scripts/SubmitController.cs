@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SubmitController : MonoBehaviour
 {
@@ -16,11 +17,25 @@ public class SubmitController : MonoBehaviour
     private HandledObject handledObject;
     private float strength;
     private Rigidbody rb;
+    [SerializeField] private InputAction iKeyAction;
 
     private void Awake()
     {
         strength = minStrength;
         handledObject = holdPosition.GetComponent<HandledObject>();
+
+        // Get the Input Action map for keyboard and mouse
+        var keyboardMouseMap = new InputActionMap("KeyboardMouse");
+
+        // Create the Input Action for the "I" key
+        iKeyAction = keyboardMouseMap.FindAction("I");
+
+        Debug.Log($"_____ iKeyAction is null {iKeyAction == null}");
+        // Subscribe to the Input Action's "performed" event
+        iKeyAction.performed += OnIKeyPressed;
+
+        // Enable the Input Action map
+        keyboardMouseMap.Enable();
     }
 
     private void Update()
@@ -109,5 +124,17 @@ public class SubmitController : MonoBehaviour
         timeElapsed += (coefficient * speed);
         if (timeElapsed < 0) { timeElapsed = 0; }
         if (timeElapsed > 1) { timeElapsed = 1; }
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe from the Input Action's "performed" event
+        iKeyAction.performed -= OnIKeyPressed;
+    }
+
+    private void OnIKeyPressed(InputAction.CallbackContext context)
+    {
+        // Handle the "I" key press here
+        Debug.Log("I key pressed!");
     }
 }
