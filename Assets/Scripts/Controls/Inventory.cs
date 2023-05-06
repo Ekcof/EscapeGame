@@ -1,28 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Item
 {
+    public int id;
+    public string name;
+    public string description;
+    public string icon;
+}
 
-    private Canvas canvas;
-    private bool _isOpen;
+public static class Inventory
+{
+    private static List<Item> items = new List<Item>();
+    private static int slotsNumber;
+    private static int freeSlots;
 
-    void Start()
+    public static bool TryAddItem(Item item)
     {
-        canvas = GetComponent<Canvas>(); 
-        canvas.enabled = false; 
+        if (freeSlots > 0)
+        {
+            items.Add(item);
+            freeSlots--;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    void Update()
+    public static void RemoveItem(Item item)
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-           Time.timeScale = canvas.enabled ? 1 : 0;
-           canvas.enabled = !canvas.enabled;
-            
-       }
+        items.Remove(item);
+        freeSlots++;
+    }
 
-
+    public static Item GetItem(string name)
+    {
+        Item item = items.FirstOrDefault(item => item.name == name);
+        return item;
     }
 }
