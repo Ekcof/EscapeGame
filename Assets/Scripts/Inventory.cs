@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
 
     private Canvas canvas;
+    private bool _isOpen;
 
     void Start()
     {
@@ -17,7 +18,9 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            canvas.enabled = !canvas.enabled; 
+            Time.timeScale = canvas.enabled ? 1 : 0;
+            canvas.enabled = !canvas.enabled;
+            
         }
 
 
