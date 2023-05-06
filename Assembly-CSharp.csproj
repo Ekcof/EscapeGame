@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Animation\IdleBehaviour.cs" />
     <Compile Include="Assets\Scripts\BallRespawnScript.cs" />
     <Compile Include="Assets\Scripts\Aim.cs" />
+    <Compile Include="Assets\Scripts\EventsHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

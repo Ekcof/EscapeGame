@@ -11,30 +11,28 @@ public class SubmitController : MonoBehaviour
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float takeBallDistance = 10f;
     [SerializeField] private float throwTrajectoryCoefficient = 0.005f;
+    [SerializeField] private InputActionAsset actionAsset;
+    [SerializeField] private InputAction iKeyAction;
+    [SerializeField] private Canvas inventoryCanvas;
     private Vector3 vectorThrow;
     private float timeElapsed;
     private Ray ray;
     private HandledObject handledObject;
     private float strength;
     private Rigidbody rb;
-    private InputAction iKeyAction;
 
     private void Awake()
     {
         strength = minStrength;
         handledObject = holdPosition.GetComponent<HandledObject>();
 
-        // Get the Input Action map for keyboard and mouse
-        var keyboardMouseMap = new InputActionMap("KeyboardMouse");
+        var keyboardMouseMap = actionAsset.actionMaps[0];
 
-        // Create the Input Action for the "I" key
-        iKeyAction = new InputAction("I");
+        iKeyAction = keyboardMouseMap.actions[0];
 
-        Debug.Log($"_____ iKeyAction is null {iKeyAction == null}");
-        // Subscribe to the Input Action's "performed" event
+        iKeyAction.Enable();
         iKeyAction.performed += OnIKeyPressed;
 
-        // Enable the Input Action map
         keyboardMouseMap.Enable();
     }
 
@@ -43,7 +41,7 @@ public class SubmitController : MonoBehaviour
         // Check if there is an existing object has been taken
         if (handledObject.IsHandled || handledObject.IsDraging)
         {
-            if (handledObject.IsHandled && rb!=null)
+            if (handledObject.IsHandled && rb != null)
             {
                 strength = Mathf.Lerp(minStrength, maxStrength, timeElapsed);
                 vectorThrow = new Vector3(Camera.main.transform.forward.x, Camera.main.transform.forward.y + 0.5f, Camera.main.transform.forward.z) * strength;
@@ -130,11 +128,18 @@ public class SubmitController : MonoBehaviour
     {
         // Unsubscribe from the Input Action's "performed" event
         iKeyAction.performed -= OnIKeyPressed;
+        iKeyAction.Disable();
     }
 
     private void OnIKeyPressed(InputAction.CallbackContext context)
     {
-        // Handle the "I" key press here
+        OpenCanvas();
         Debug.Log("I key pressed!");
+    }
+
+    private void OpenCanvas()
+    {
+        Time.timeScale = inventoryCanvas.enabled ? 1 : 0;
+        inventoryCanvas.enabled = !inventoryCanvas.enabled;
     }
 }

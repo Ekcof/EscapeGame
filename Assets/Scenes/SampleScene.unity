@@ -1995,6 +1995,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: actionAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 2020d630b1d700240bc422120994f19c, type: 3}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
       propertyPath: iKeyAction.m_Id
       value: d541feaa-f7e3-469e-9e8a-c2999ef9f2ce
       objectReference: {fileID: 0}

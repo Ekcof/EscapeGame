@@ -6,7 +6,7 @@
             "id": "40fcfcec-351f-4bf8-8f64-edc840d944b0",
             "actions": [
                 {
-                    "name": "PressI",
+                    "name": "I",
                     "type": "Button",
                     "id": "811f7a4b-a500-4643-b1ee-ff96e06cf19a",
                     "expectedControlType": "Button",
@@ -19,11 +19,11 @@
                 {
                     "name": "",
                     "id": "cea333fb-7bda-45b0-804c-96bcd1741e6b",
-                    "path": "",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "New control scheme",
-                    "action": "PressI",
+                    "action": "I",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
