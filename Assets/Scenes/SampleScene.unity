@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1994,6 +1994,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: iKeyAction.m_Id
+      value: d541feaa-f7e3-469e-9e8a-c2999ef9f2ce
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: iKeyAction.m_Name
+      value: I Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: iKeyAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: iKeyAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 4b9e01ba-e939-4bea-b8ab-3da36250295e
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: iKeyAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/i
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: iKeyAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: I Key
+      objectReference: {fileID: 0}
     - target: {fileID: 3477456875236929929, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
       propertyPath: gravity
       value: 15
@@ -2807,7 +2831,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23892
+  m_Name: pb_Mesh25012
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

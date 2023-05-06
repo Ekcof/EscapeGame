@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingActions.cs" />
     <Compile Include="Assets\Scripts\ResetRingPassScript.cs" />
     <Compile Include="Assets\Scripts\DrawTrajectory.cs" />
     <Compile Include="Assets\Scripts\Animation\AttackBehaviour.cs" />
@@ -64,12 +65,16 @@
     <Compile Include="Assets\Scripts\ObstacleScript.cs" />
     <Compile Include="Assets\Scripts\BasketBallRingScript.cs" />
     <Compile Include="Assets\Scripts\RingTriggerScript.cs" />
+    <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleControls.cs" />
     <Compile Include="Assets\Scripts\Animation\ChaseBehaviour.cs" />
+    <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingActionAsset.cs" />
     <Compile Include="Assets\Scripts\Animation\PatrolBehaviour.cs" />
     <Compile Include="Assets\Scripts\HandledObject.cs" />
+    <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingPlayerInput.cs" />
     <Compile Include="Assets\Scripts\SoundHitScript.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\SC_FPSController.cs" />
+    <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingState.cs" />
     <Compile Include="Assets\Scripts\Animation\IdleBehaviour.cs" />
     <Compile Include="Assets\Scripts\BallRespawnScript.cs" />
     <Compile Include="Assets\Scripts\Aim.cs" />

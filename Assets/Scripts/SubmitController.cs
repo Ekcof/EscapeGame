@@ -17,7 +17,7 @@ public class SubmitController : MonoBehaviour
     private HandledObject handledObject;
     private float strength;
     private Rigidbody rb;
-    [SerializeField] private InputAction iKeyAction;
+    private InputAction iKeyAction;
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class SubmitController : MonoBehaviour
         var keyboardMouseMap = new InputActionMap("KeyboardMouse");
 
         // Create the Input Action for the "I" key
-        iKeyAction = keyboardMouseMap.FindAction("I");
+        iKeyAction = new InputAction("I");
 
         Debug.Log($"_____ iKeyAction is null {iKeyAction == null}");
         // Subscribe to the Input Action's "performed" event

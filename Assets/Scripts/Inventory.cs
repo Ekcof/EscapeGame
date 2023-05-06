@@ -14,15 +14,15 @@ public class Inventory : MonoBehaviour
         canvas.enabled = false; 
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Time.timeScale = canvas.enabled ? 1 : 0;
-            canvas.enabled = !canvas.enabled;
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.I))
+    //    {
+    //        Time.timeScale = canvas.enabled ? 1 : 0;
+    //        canvas.enabled = !canvas.enabled;
             
-        }
+    //    }
 
 
-    }
+    //}
 }
