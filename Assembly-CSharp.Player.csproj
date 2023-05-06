@@ -56,29 +56,59 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Controls\Inventory.cs" />
     <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingActions.cs" />
+    <Compile Include="Assets\Scripts\Controls\Audio.cs" />
+    <Compile Include="Assets\Scripts\Controls\Escape.cs" />
+    <Compile Include="Assets\Scripts\Controls\Setting.cs" />
+    <Compile Include="Assets\Scripts\Controls\Menu1.cs" />
     <Compile Include="Assets\Scripts\ResetRingPassScript.cs" />
     <Compile Include="Assets\Scripts\DrawTrajectory.cs" />
     <Compile Include="Assets\Scripts\Animation\AttackBehaviour.cs" />
     <Compile Include="Assets\Scripts\SubmitController.cs" />
+    <Compile Include="Assets\Scripts\Controls\Exit.cs" />
     <Compile Include="Assets\Scripts\ObstacleScript.cs" />
     <Compile Include="Assets\Scripts\BasketBallRingScript.cs" />
     <Compile Include="Assets\Scripts\RingTriggerScript.cs" />
     <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleControls.cs" />
+    <Compile Include="Assets\Scripts\Controls\Menu.cs" />
     <Compile Include="Assets\Scripts\Animation\ChaseBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Controls\Pause.cs" />
     <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingActionAsset.cs" />
     <Compile Include="Assets\Scripts\Animation\PatrolBehaviour.cs" />
     <Compile Include="Assets\Scripts\HandledObject.cs" />
     <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingPlayerInput.cs" />
     <Compile Include="Assets\Scripts\SoundHitScript.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\Controls\No_Reset.cs" />
     <Compile Include="Assets\Scripts\SC_FPSController.cs" />
     <Compile Include="Assets\Samples\Input System\1.4.4\Simple Demo\SimpleController_UsingState.cs" />
     <Compile Include="Assets\Scripts\Animation\IdleBehaviour.cs" />
     <Compile Include="Assets\Scripts\BallRespawnScript.cs" />
-    <Compile Include="Assets\Scripts\Aim.cs" />
-    <Compile Include="Assets\Scripts\EventsHandler.cs" />
+    <Compile Include="Assets\Scripts\Controls\Aim.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
