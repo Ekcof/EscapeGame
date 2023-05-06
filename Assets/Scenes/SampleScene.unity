@@ -464,11 +464,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7527793029346490932, guid: 82bca46520626fa4d9b3db3ba7b8dcf7, type: 3}
   m_PrefabInstance: {fileID: 5862809672038368615}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &429479130 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3477456875236929938, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
-  m_PrefabInstance: {fileID: 1385511798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &488201688
 Mesh:
   m_ObjectHideFlags: 0
@@ -2172,6 +2167,10 @@ PrefabInstance:
       value: d541feaa-f7e3-469e-9e8a-c2999ef9f2ce
       objectReference: {fileID: 0}
     - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1578158810}
+    - target: {fileID: 3477456875236929928, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
       propertyPath: iKeyAction.m_Name
       value: I Key
       objectReference: {fileID: 0}
@@ -2274,21 +2273,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3477456875236929940, guid: 36ac4e4933342af468ba42d9c9e2f7ff, type: 3}
   m_PrefabInstance: {fileID: 1385511798}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1394525613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429479130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607d5646a50706e47b79178e32a17854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _paused: {fileID: 0}
-  _settings: {fileID: 0}
-  _muisicScroll: {fileID: 0}
 --- !u!1001 &1395610523
 PrefabInstance:
   m_ObjectHideFlags: 0
