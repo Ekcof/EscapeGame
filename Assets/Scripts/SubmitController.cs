@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class SubmitController : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class SubmitController : MonoBehaviour
     [SerializeField] private float takeBallDistance = 10f;
     [SerializeField] private float throwTrajectoryCoefficient = 0.005f;
     [SerializeField] private InputActionAsset actionAsset;
-    [SerializeField] private InputAction iKeyAction;
+    private InputAction iKeyAction;
+    private InputAction eKeyAction;
     [SerializeField] private Canvas inventoryCanvas;
     private Vector3 vectorThrow;
     private float timeElapsed;
@@ -28,10 +30,14 @@ public class SubmitController : MonoBehaviour
 
         var keyboardMouseMap = actionAsset.actionMaps[0];
 
-        iKeyAction = keyboardMouseMap.actions[0];
+        iKeyAction = keyboardMouseMap.actions.FirstOrDefault(action => action.name == "I");
+        eKeyAction = keyboardMouseMap.actions.FirstOrDefault(action => action.name == "E");
 
         iKeyAction.Enable();
-        iKeyAction.performed += OnIKeyPressed;
+        iKeyAction.performed += OnInventoryKeyPressed;
+
+        iKeyAction.Enable();
+        iKeyAction.performed += OnSubmitKeyPressed;
 
         keyboardMouseMap.Enable();
     }
@@ -51,23 +57,23 @@ public class SubmitController : MonoBehaviour
                 DrawTrajectory.Instance.UpdateTrajectory(forceV, rb, holdPosition.transform.position);
             }
         }
-        else
-        {
-            ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            bool sphereCast = Physics.SphereCast(ray.origin, 0.3f, ray.direction, out hit, takeBallDistance, layerMask);
-            rb = null;
-            if (hit.transform != null) rb = hit.transform.GetComponent<Rigidbody>();
+        //else
+        //{
+        //    ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        //    bool sphereCast = Physics.SphereCast(ray.origin, 0.3f, ray.direction, out hit, takeBallDistance, layerMask);
+        //    rb = null;
+        //    if (hit.transform != null) rb = hit.transform.GetComponent<Rigidbody>();
 
-            // Get if Button is clicked
-            if (Input.GetButton("Submit") || Input.GetKeyDown(KeyCode.E))
-            {
-                if (rb != null && hit.transform.tag == "Ball")
-                {
-                    handledObject.IsDraging = true;
-                    handledObject.TakeObject(hit.transform.gameObject);
-                }
-            }
-        }
+        //    // Get if Button is clicked
+        //    if (Input.GetButton("Submit") || Input.GetKeyDown(KeyCode.E))
+        //    {
+        //        if (rb != null && hit.transform.tag == "Ball")
+        //        {
+        //            handledObject.IsDraging = true;
+        //            handledObject.TakeObject(hit.transform.gameObject);
+        //        }
+        //    }
+        //}
 
         // Get the scroll to change the trajectory of throw
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
@@ -120,21 +126,40 @@ public class SubmitController : MonoBehaviour
     private void ChangeForce(float coefficient)
     {
         timeElapsed += (coefficient * speed);
-        if (timeElapsed < 0) { timeElapsed = 0; }
-        if (timeElapsed > 1) { timeElapsed = 1; }
+        timeElapsed = Mathf.Clamp01(timeElapsed);
     }
 
     private void OnDisable()
     {
         // Unsubscribe from the Input Action's "performed" event
-        iKeyAction.performed -= OnIKeyPressed;
+        eKeyAction.performed -= OnSubmitKeyPressed;
+        iKeyAction.performed -= OnInventoryKeyPressed;
         iKeyAction.Disable();
+        eKeyAction.Disable();
     }
 
-    private void OnIKeyPressed(InputAction.CallbackContext context)
+    private void OnInventoryKeyPressed(InputAction.CallbackContext context)
     {
         OpenCanvas();
         Debug.Log("I key pressed!");
+    }
+
+    private void OnSubmitKeyPressed(InputAction.CallbackContext context)
+    {
+        if (!handledObject.IsHandled && !handledObject.IsDraging)
+        {
+            ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            bool sphereCast = Physics.SphereCast(ray.origin, 0.3f, ray.direction, out hit, takeBallDistance, layerMask);
+            rb = null;
+            if (hit.transform != null) rb = hit.transform.GetComponent<Rigidbody>();
+
+
+            if (rb != null && hit.transform.tag == "Ball")
+            {
+                handledObject.IsDraging = true;
+                handledObject.TakeObject(hit.transform.gameObject);
+            }
+        }
     }
 
     private void OpenCanvas()
